@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "doona",
+  "initialVersions": {
+    "nextra": "2.13.2",
+    "nextra-theme-blog": "2.13.2",
+    "nextra-theme-docs": "2.13.2"
+  },
+  "changesets": []
+}

@@ -8,6 +8,22 @@ everything hooked up together, I just decided to put my portfolio in here.
 
 ## Development
 
+### Versioning
+
+To keep a somewhat semantic versioning system while still being able to fetch
+from the upstream repo, please treat the `doona` branch as the `main` branch.
+Please use
+[changeset's prerelease features](https://github.com/changesets/changesets/blob/main/docs/prereleases.md)
+in this branch.
+
+Versions for the doona-modified Nextra packages will be in the format:
+
+```
+<upstream version>-doona.<doona version>
+```
+
+e.g. `2.13.2-doona.23`. The actual `doona` app is not versioned.
+
 ### Installation
 
 The doona repository uses [PNPM Workspaces](https://pnpm.io/workspaces) and
