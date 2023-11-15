@@ -10,6 +10,52 @@ module.exports = {
       ...docsConfig.theme.colors,
       primary: colors.blue
     },
+    // Use fontVariationSettings to set font weight
+    // instead of font-weight
+    fontWeight: {
+      thin: {
+        css: {
+          fontVariationSettings: "'wght' 100",
+          fontWeight: 400
+        }
+      },
+      normal: {
+        css: {
+          fontVariationSettings: "'wght' 400",
+          fontWeight: 400
+        }
+      },
+      medium: {
+        css: {
+          fontVariationSettings: "'wght' 500",
+          fontWeight: 400
+        }
+      },
+      semibold: {
+        css: {
+          fontVariationSettings: "'wght' 600",
+          fontWeight: 400
+        }
+      },
+      bold: {
+        css: {
+          fontVariationSettings: "'wght' 700",
+          fontWeight: 400
+        }
+      },
+      extrabold: {
+        css: {
+          fontVariationSettings: "'wght' 800",
+          fontWeight: 400
+        }
+      },
+      black: {
+        css: {
+          fontVariationSettings: "'wght' 900",
+          fontWeight: 400
+        }
+      }
+    },
     extend: {
       colors: docsConfig.theme.extend.colors,
       fontFamily: {
@@ -55,7 +101,27 @@ module.exports = {
             '--tw-prose-invert-pre-code': theme('colors.black'),
             '--tw-prose-invert-pre-bg': theme('colors.white'),
             '--tw-prose-invert-th-borders': theme('colors.white'),
-            '--tw-prose-invert-td-borders': theme('colors.white')
+            '--tw-prose-invert-td-borders': theme('colors.white'),
+            h1: {
+              fontVariationSettings: "'wght' 600",
+              fontWeight: 400
+            },
+            h2: {
+              fontVariationSettings: "'wght' 500",
+              fontWeight: 400
+            },
+            h3: {
+              fontVariationSettings: "'wght' 600",
+              fontWeight: 400
+            },
+            strong: {
+              fontVariationSettings: "'wght' 600",
+              fontWeight: 400
+            },
+            code: {
+              fontVariationSettings: "'wght' 400",
+              fontWeight: 400
+            }
           }
         }
       })
