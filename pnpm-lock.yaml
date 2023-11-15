@@ -137,6 +137,29 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
 
+  doona:
+    dependencies:
+      next:
+        specifier: 13.5.6
+        version: 13.5.6(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)
+      nextra:
+        specifier: workspace:*
+        version: file:packages/nextra(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
+      nextra-theme-blog:
+        specifier: workspace:*
+        version: file:packages/nextra-theme-blog(next@13.5.6)(nextra@2.13.2)(react-dom@18.2.0)(react@18.2.0)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    dependenciesMeta:
+      nextra:
+        injected: true
+      nextra-theme-blog:
+        injected: true
+
   examples/blog:
     dependencies:
       next:
