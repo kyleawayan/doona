@@ -10,6 +10,11 @@
 
 html {
   @apply nx-scroll-pt-5;
+  @apply nx-bg-white;
+}
+
+html.dark {
+  @apply nx-bg-black;
 }
 
 body {
