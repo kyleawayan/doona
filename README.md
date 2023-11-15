@@ -24,6 +24,9 @@ Versions for the doona-modified Nextra packages will be in the format:
 
 e.g. `2.13.2-doona.23`. The actual `doona` app is not versioned.
 
+The `main` branch will be used to fetch upstream changes (from the
+[main Nextra repository](https://github.com/shuding/nextra)).
+
 ### Installation
 
 The doona repository uses [PNPM Workspaces](https://pnpm.io/workspaces) and
