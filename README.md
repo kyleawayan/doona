@@ -40,3 +40,6 @@ From the project root directory...
 ```sh
 pnpm dev:doona
 ```
+
+To edit the theme package and see changes while running `pnpm dev:doona`, make a
+change in one of the MDX files. Next.js will do a full reload.
