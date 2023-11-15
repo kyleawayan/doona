@@ -12,6 +12,15 @@ module.exports = {
     },
     extend: {
       colors: docsConfig.theme.extend.colors,
+      fontFamily: {
+        sans: [
+          'var(--font-inter)',
+          {
+            fontVariationSettings: '"opsz" 32'
+          }
+        ],
+        mono: ['var(--font-iosevka)']
+      },
       typography: theme => ({
         lesserafim: {
           css: {

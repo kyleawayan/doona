@@ -21,6 +21,10 @@ body {
   @apply nx-px-4;
 }
 
+main {
+  @apply nx-font-sans;
+}
+
 article {
   @apply nx-mx-auto nx-block nx-pt-20 nx-pb-32;
 }
