@@ -11,10 +11,10 @@ everything hooked up together, I just decided to put my portfolio in here.
 ### Versioning
 
 To keep a somewhat semantic versioning system while still being able to fetch
-from the upstream repo, please treat the `doona` branch as the `main` branch.
-Please use
+from the upstream repo, please treat the `doona` branch as the main branch of
+this repository. Please use
 [changeset's prerelease features](https://github.com/changesets/changesets/blob/main/docs/prereleases.md)
-in this branch.
+in the `doona` branch.
 
 Versions for the doona-modified Nextra packages will be in the format:
 
@@ -24,8 +24,8 @@ Versions for the doona-modified Nextra packages will be in the format:
 
 e.g. `2.13.2-doona.23`. The actual `doona` app is not versioned.
 
-The `main` branch will be used to fetch upstream changes (from the
-[main Nextra repository](https://github.com/shuding/nextra)).
+The actual `main` branch in this repository will be used to fetch upstream
+changes (from the [main Nextra repository](https://github.com/shuding/nextra)).
 
 ### Installation
 
