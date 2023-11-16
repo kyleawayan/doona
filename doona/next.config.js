@@ -9,5 +9,17 @@ const withNextra = nextra({
 
 export default withNextra({
   reactStrictMode: true,
-  cleanDistDir: true
+  cleanDistDir: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'd4fhu6c3mdrl9.cloudfront.net',
+        port: '',
+        pathname: '/**'
+      }
+    ],
+    loader: 'custom',
+    loaderFile: './lib/serverlessImageHandler.js'
+  }
 })
