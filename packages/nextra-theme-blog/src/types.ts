@@ -4,6 +4,10 @@ import type { Components } from 'nextra/mdx'
 import type { ReactNode } from 'react'
 
 export interface NextraBlogTheme {
+  awsServerlessImageHandlerConfig?: {
+    apiEndpoint: string
+    bucketName: string
+  }
   comments?: ReactNode
   components?: Components
   cusdis?: {

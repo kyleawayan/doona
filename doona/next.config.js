@@ -18,8 +18,6 @@ export default withNextra({
         port: '',
         pathname: '/**'
       }
-    ],
-    loader: 'custom',
-    loaderFile: './lib/serverlessImageHandler.js'
+    ]
   }
 })
