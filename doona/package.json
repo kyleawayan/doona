@@ -23,5 +23,10 @@
     "nextra-theme-blog": {
       "injected": true
     }
+  },
+  "nextBundleAnalysis": {
+    "budget": 358400,
+    "budgetPercentIncreaseRed": 20,
+    "showDetails": true
   }
 }
