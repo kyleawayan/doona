@@ -52,4 +52,5 @@ export default function Layout({
 export { useTheme } from 'next-themes'
 export { useBlogContext } from './blog-context'
 export { getStaticTags } from './utils/get-tags'
+export { Bleed } from './bleed'
 export * from './types'
