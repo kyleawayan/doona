@@ -1,3 +1,4 @@
+// Copied from packages/nextra-theme-docs/src/components/bleed.tsx
 import type { ReactElement, ReactNode } from 'react'
 
 export function Bleed({
