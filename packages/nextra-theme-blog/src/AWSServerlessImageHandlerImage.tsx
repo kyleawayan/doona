@@ -40,14 +40,19 @@ function parseEverCdnKeyAndGetImgDim(ref: string) {
 export type ServerlessImageHandlerImageProps = {
   src: string
   alt: string
+  square?: boolean
+  sizes?: string
 }
 
 export function AWSServerlessImageHandlerImage({
   src,
-  alt
+  alt,
+  square,
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 }: ServerlessImageHandlerImageProps) {
   const { config } = useBlogContext()
-  const { width, height } = parseEverCdnKeyAndGetImgDim(src)
+  const { width } = parseEverCdnKeyAndGetImgDim(src)
+  let { height } = parseEverCdnKeyAndGetImgDim(src)
 
   const bucketName = config.awsServerlessImageHandlerConfig?.bucketName
   const apiEndpoint = config.awsServerlessImageHandlerConfig?.apiEndpoint
@@ -60,6 +65,15 @@ export function AWSServerlessImageHandlerImage({
 
   if (src.endsWith('.gif')) {
     src = createImageRequest(bucketName, apiEndpoint, src)
+  } else if (square) {
+    src = createImageRequest(bucketName, apiEndpoint, src, {
+      resize: {
+        width,
+        height: width,
+        fit: 'cover'
+      }
+    })
+    height = width
   } else {
     src = createImageRequest(bucketName, apiEndpoint, src, {
       resize: {
@@ -69,12 +83,6 @@ export function AWSServerlessImageHandlerImage({
   }
 
   return (
-    <Image
-      src={src}
-      alt={alt}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      width={width}
-      height={height}
-    />
+    <Image src={src} alt={alt} sizes={sizes} width={width} height={height} />
   )
 }
