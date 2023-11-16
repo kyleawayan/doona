@@ -1,5 +1,9 @@
 /* eslint sort-keys: error */
 export default {
+  awsServerlessImageHandlerConfig: {
+    apiEndpoint: 'https://d4fhu6c3mdrl9.cloudfront.net',
+    bucketName: 'kyleawayan-ever'
+  },
   darkMode: true,
   dateFormatter: date => `Last updated at ${date.toDateString()}`,
   footer: (
