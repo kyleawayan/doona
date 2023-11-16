@@ -40,8 +40,6 @@ function parseEverCdnKeyAndGetImgDim(ref: string) {
 export type ServerlessImageHandlerImageProps = {
   src: string
   alt: string
-  sizes: string
-  className?: string
 }
 
 export function AWSServerlessImageHandlerImage({
