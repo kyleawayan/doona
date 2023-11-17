@@ -25,16 +25,56 @@ function createImageRequest(
   return url
 }
 
-function parseEverCdnKeyAndGetImgDim(ref: string) {
+function parseEverCdnKeyAndGetImgDim(ref: string, square?: boolean) {
   const match = ref.match(/(\d+)x(\d+)/)
 
   if (match && match.length === 3) {
     const width = parseInt(match[1])
     const height = parseInt(match[2])
+
+    if (square) {
+      return { width, height: width }
+    }
+
     return { width, height }
   }
 
   return { width: 0, height: 0 }
+}
+
+const imageLoader = ({
+  src,
+  width,
+  bucketName,
+  apiEndpoint,
+  square
+}: {
+  src: string
+  width: number
+  bucketName: string
+  apiEndpoint: string
+  square?: boolean
+}) => {
+  // If src ends with ".gif", return the original src
+  // as making image modifications doesn't work right now
+  if (src.endsWith('.gif'))
+    return createImageRequest(bucketName, apiEndpoint, src)
+
+  if (square) {
+    return createImageRequest(bucketName, apiEndpoint, src, {
+      resize: {
+        width,
+        height: width,
+        fit: 'cover'
+      }
+    })
+  }
+
+  return createImageRequest(bucketName, apiEndpoint, src, {
+    resize: {
+      width
+    }
+  })
 }
 
 export type ServerlessImageHandlerImageProps = {
@@ -51,8 +91,7 @@ export function AWSServerlessImageHandlerImage({
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 }: ServerlessImageHandlerImageProps) {
   const { config } = useBlogContext()
-  const { width } = parseEverCdnKeyAndGetImgDim(src)
-  let { height } = parseEverCdnKeyAndGetImgDim(src)
+  const { width, height } = parseEverCdnKeyAndGetImgDim(src, square)
 
   const bucketName = config.awsServerlessImageHandlerConfig?.bucketName
   const apiEndpoint = config.awsServerlessImageHandlerConfig?.apiEndpoint
@@ -63,26 +102,14 @@ export function AWSServerlessImageHandlerImage({
     )
   }
 
-  if (src.endsWith('.gif')) {
-    src = createImageRequest(bucketName, apiEndpoint, src)
-  } else if (square) {
-    src = createImageRequest(bucketName, apiEndpoint, src, {
-      resize: {
-        width,
-        height: width,
-        fit: 'cover'
-      }
-    })
-    height = width
-  } else {
-    src = createImageRequest(bucketName, apiEndpoint, src, {
-      resize: {
-        width
-      }
-    })
-  }
-
   return (
-    <Image src={src} alt={alt} sizes={sizes} width={width} height={height} />
+    <Image
+      src={src}
+      alt={alt}
+      sizes={sizes}
+      width={width}
+      height={height}
+      loader={p => imageLoader({ ...p, bucketName, apiEndpoint, square })}
+    />
   )
 }
