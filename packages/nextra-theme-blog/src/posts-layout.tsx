@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { ReactElement, ReactNode } from 'react'
+import { AWSServerlessImageHandlerImage } from './AWSServerlessImageHandlerImage'
 import { BasicLayout } from './basic-layout'
 import { useBlogContext } from './blog-context'
 import { MDXTheme } from './mdx-theme'
@@ -30,14 +31,27 @@ export function PostsLayout({
     }
 
     const postTitle = post.frontMatter?.title || post.name
-    const date: Date | null = post.frontMatter?.date
-      ? new Date(post.frontMatter.date)
-      : null
     const description = post.frontMatter?.description
+    const coverKey = post.frontMatter?.coverKey
+    const coverAlt = post.frontMatter?.coverAlt
 
     return (
       <div key={post.route} className="post-item">
-        <h3>
+        <Link href={post.route} passHref legacyBehavior>
+          <a>
+            <div className="nx-not-prose nx-w-full nx-aspect-square nx-bg-gray-300">
+              {coverKey && (
+                <AWSServerlessImageHandlerImage
+                  src={coverKey}
+                  alt={coverAlt}
+                  square
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
+                />
+              )}
+            </div>
+          </a>
+        </Link>
+        <h3 className="!nx-mb-1 !nx-mt-3">
           <Link href={post.route} passHref legacyBehavior>
             <a className="!nx-no-underline">{postTitle}</a>
           </Link>
@@ -52,14 +66,6 @@ export function PostsLayout({
             )}
           </p>
         )}
-        {date && (
-          <time
-            className="nx-text-sm dark:nx-text-gray-400 nx-text-gray-600"
-            dateTime={date.toISOString()}
-          >
-            {date.toDateString()}
-          </time>
-        )}
       </div>
     )
   })
@@ -67,7 +73,7 @@ export function PostsLayout({
     <BasicLayout>
       <Nav />
       <MDXTheme>{children}</MDXTheme>
-      {postList}
+      <div className="nx-grid nx-grid-cols-2 nx-gap-5">{postList}</div>
     </BasicLayout>
   )
 }
