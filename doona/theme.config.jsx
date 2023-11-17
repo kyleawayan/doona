@@ -5,7 +5,11 @@ export default {
     bucketName: 'kyleawayan-ever'
   },
   darkMode: true,
-  dateFormatter: date => `Last updated at ${date.toDateString()}`,
+  dateFormatter: date => {
+    // eslint-disable-next-line sort-keys
+    const options = { year: 'numeric', month: 'short', day: '2-digit' }
+    return date.toLocaleDateString(undefined, options).replaceAll(',', '')
+  },
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
       {new Date().getFullYear()} © Kyle Awayan.
