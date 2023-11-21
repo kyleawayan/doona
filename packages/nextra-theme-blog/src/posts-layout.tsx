@@ -39,7 +39,7 @@ export function PostsLayout({
       <div key={post.route} className="post-item">
         <Link href={post.route} passHref legacyBehavior>
           <a>
-            <div className="nx-not-prose nx-w-full nx-aspect-square nx-bg-gray-300">
+            <div className="nx-not-prose nx-w-full nx-aspect-square nx-bg-gray-400">
               {coverKey && (
                 <AWSServerlessImageHandlerImage
                   src={coverKey}
