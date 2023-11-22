@@ -2,9 +2,10 @@ import localFont from 'next/font/local'
 
 const inter = localFont({
   src: [
-    { path: '../fonts/Inter.var.woff2', style: 'normal' },
-    { path: '../fonts/Inter-Italic.var.woff2', style: 'italic' }
+    { path: '../fonts/InterVariable.woff2', style: 'normal' },
+    { path: '../fonts/InterVariable-Italic.woff2', style: 'italic' }
   ],
+  weight: '100 900',
   display: 'swap',
   variable: '--font-inter'
 })
