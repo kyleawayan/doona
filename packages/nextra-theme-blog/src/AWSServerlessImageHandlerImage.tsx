@@ -77,6 +77,21 @@ const imageLoader = ({
   })
 }
 
+export function AWSServerlessImageEncodeUrl(src: string, width: number) {
+  const { config } = useBlogContext()
+
+  const bucketName = config.awsServerlessImageHandlerConfig?.bucketName
+  const apiEndpoint = config.awsServerlessImageHandlerConfig?.apiEndpoint
+
+  if (!apiEndpoint || !bucketName) {
+    throw new Error(
+      'Missing required config for awsServerlessImageHandlerConfig'
+    )
+  }
+
+  return imageLoader({ src, width, bucketName, apiEndpoint })
+}
+
 export type ServerlessImageHandlerImageProps = {
   src: string
   alt: string
