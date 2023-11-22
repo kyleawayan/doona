@@ -11,7 +11,10 @@ const inter = localFont({
 })
 
 const iosevka = localFont({
-  src: [{ path: '../fonts/iosevka-regular.woff2', style: 'normal' }],
+  src: [
+    { path: '../fonts/iosevka-regular.woff2', style: 'normal' },
+    { path: '../fonts/iosevka-semibold.woff2', style: 'normal', weight: '600' }
+  ],
   display: 'swap',
   variable: '--font-iosevka'
 })
