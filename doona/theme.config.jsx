@@ -4,7 +4,7 @@ export default {
     apiEndpoint: 'https://d4fhu6c3mdrl9.cloudfront.net',
     bucketName: 'kyleawayan-ever'
   },
-  darkMode: true,
+  darkMode: false,
   dateFormatter: date => {
     // eslint-disable-next-line sort-keys
     const options = { year: 'numeric', month: 'short', day: '2-digit' }
