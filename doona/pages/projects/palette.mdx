@@ -14,6 +14,8 @@ date: 2021/02/13
 ---
 
 import { Bleed } from 'nextra-theme-blog'
+import { Cards } from 'nextra/components'
+import { ArrowRightIcon } from 'nextra/icons'
 import ImageWithCaption from '../../components/ImageWithCaption'
 
 I was browsing around, and found someone's
@@ -118,8 +120,22 @@ A few hours later, a developer from one of the repositories I starred made a
 Huge thanks to [wonderlandpark](https://github.com/wonderlandpark) for
 contributing.
 
+<ImageWithCaption
+  src="palette/Screenshot 2023-11-22 at 1.51.53 PM-1348x1625.png"
+  alt='Screenshot of the "Palette" app. The app is displayed in Korean instead of English.'
+  caption="The Korean version can be accessed at paletteiu.vercel.app/ko-kr"
+/>
+
 Once I made the finishing touches and added SEO, it was completely finished. I
 deployed it on Vercel. Overall, this was a very fun project to make!
 
 If you would like to try it, you can check it out at
 [paletteiu.vercel.app](https://paletteiu.vercel.app)
+
+<Cards>
+  <Cards.Card
+    href="https://paletteiu.vercel.app"
+    icon={<ArrowRightIcon />}
+    title="Go to Palette app"
+  />
+</Cards>
