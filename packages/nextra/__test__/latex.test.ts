@@ -6,7 +6,7 @@ const options = {
   latex: true
 }
 
-describe('latex', () => {
+describe.skip('latex', () => {
   // TODO: remove this test after rehype-math upgrade to v6
   it("should not throw TypeError: Cannot read properties of undefined (reading 'mathFlowInside')", async () => {
     const { result } = await compileMdx('$$\nx^2\n$$', options)

@@ -4,17 +4,15 @@ export default {
     apiEndpoint: 'https://d4fhu6c3mdrl9.cloudfront.net',
     bucketName: 'kyleawayan-ever'
   },
-  darkMode: true,
-  dateFormatter: date => `Last updated at ${date.toDateString()}`,
+  darkMode: false,
+  dateFormatter: date => {
+    // eslint-disable-next-line sort-keys
+    const options = { year: 'numeric', month: 'short', day: '2-digit' }
+    return date.toLocaleDateString(undefined, options).replaceAll(',', '')
+  },
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
-      <abbr
-        title="This site and all its content are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
-        style={{ cursor: 'help' }}
-      >
-        CC BY-NC 4.0
-      </abbr>{' '}
-      {new Date().getFullYear()} © Shu Ding.
+      {new Date().getFullYear()} © Kyle Awayan.
       <a href="/feed.xml">RSS</a>
       <style jsx>{`
         a {
