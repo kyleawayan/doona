@@ -14,7 +14,7 @@ html {
 }
 
 html.dark {
-  @apply nx-bg-black;
+  @apply nx-bg-neutral-900;
 }
 
 body {

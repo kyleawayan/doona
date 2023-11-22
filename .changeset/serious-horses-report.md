@@ -2,5 +2,5 @@
 'nextra-theme-blog': minor
 ---
 
-Change typography colors, completely black or white background, use Inter
+Change typography colors, change background colors, use Inter
 Display font, adjust font weights
