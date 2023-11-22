@@ -1,0 +1,53 @@
+---
+title: 'Gemini'
+description: 'The aesthetic now playing app for Spotify.'
+coverKey: gemini/970efd1767f42469b6e2635f127bdd60fbca8b81-1920x1080.webp
+coverAlt: 'TODO'
+date: 2020/09/01
+---
+
+import { Bleed } from 'nextra-theme-blog'
+import { Cards } from 'nextra/components'
+import { CopyIcon, GitHubIcon } from 'nextra/icons'
+import ImageWithCaption from '../../components/ImageWithCaption'
+
+<Bleed>
+  <iframe
+    className="aspect-video w-full"
+    src="https://www.youtube.com/embed/jIU53YdR9Tw?si=aFyg00W71UI-uIg5&autoplay=1&mute=1&loop=1&color=white"
+    title="YouTube video player"
+    frameBorder="0"
+  />
+</Bleed>
+
+<div className="my-24 text-2xl">
+  Gemini is an aesthetic "now playing" player for Spotify. It shows the title
+  and artist of the song with the album art filling the background of the
+  screen. It is an app that you can put in like a boba shop, so people know what
+  song is playing—in an aesthetic way.
+</div>
+
+<Bleed>
+  <ImageWithCaption
+    src="gemini/Screen Shot 2020-12-11 at 6.41.14 PM-1844x1844.png"
+    alt="TODO"
+  />
+</Bleed>
+
+Built with Electron and Spotify's official API. OAuth 2.0 PKCE flow implemented.
+
+Check out the source code, or download Gemini on
+[GitHub](https://github.com/kywagaha/gemini).
+
+<Cards>
+  <Cards.Card
+    href="https://github.com/kywagaha/gemini"
+    icon={<GitHubIcon />}
+    title="Gemini on GitHub"
+  />
+  <Cards.Card
+    href="https://github.com/kywagaha/gemini/releases"
+    icon={<CopyIcon />}
+    title="Download Gemini"
+  />
+</Cards>
