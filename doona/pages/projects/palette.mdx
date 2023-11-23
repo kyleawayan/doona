@@ -73,7 +73,7 @@ I then made a basic UI, and then the app was functioning.
   container="large-container"
 />
 
-For cropping, I decided on using the
+For cropping, I decided to use the
 [react-easy-crop](https://github.com/ValentinH/react-easy-crop) library. I liked
 this library as it was very minimal--no sliders or anything like that, just a
 simple one where you can drag and scroll. It even came with guide lines too!
@@ -83,15 +83,15 @@ simple one where you can drag and scroll. It even came with guide lines too!
   alt="A gif showing a demo of the cropping feature. An image is loaded into the frame, then dragged around to adjust the position. The image is then resized by zooming in and out with the mouse or touchscreen."
 />
 
-To signify that the photo was movable/croppable, I flashed the guide when the
-user inserts a photo. I wanted to see if people would know that they had the
-ability to adjust the photo. I asked my friends to test the website (without
-telling them about the cropping feature), and after they were done using it, I
-asked what was the first thing they did when they loaded the photo. All of them
-said they moved the photo around. Even some of them said that they would've
-still moved it even if the guide didn't show up at all. This cropping feature is
-similar to posting a photo on Instagram, so most people should be able to use
-it, at least Gen Z...
+To indicate that the photo was movable/croppable, I flashed the guide when the
+user inserted a photo. I wanted to see if people would know that they had the
+ability to adjust the photo. I asked my friends to test the website without
+mentioning the cropping feature. After they finished using it, I asked them
+about the first action they took upon loading a photo. All of them said they
+moved the photo around. Even some of them said that they would've still moved it
+even if the guide didn't show up at all. This cropping feature is similar to
+posting a photo on Instagram, so most people should be able to use it, at least
+Gen Z...
 
 I implemented the library, but there was one more problem left: setting the
 initial size of the photo. Basically, the problem was that if the user loaded a
@@ -107,7 +107,7 @@ Korean artist, so I wanted to add Korean translations to this app. I researched
 a bit to find the most accurate Korean translator. I knew that it wasn't going
 to be perfect, but I wanted Koreans to at least have an easier time
 understanding. I used [react-i18next](https://github.com/i18next/react-i18next)
-to handle the language changing. I implemented English and _probably not
+to handle the language changing. I implemented English and _likely less
 accurate_ Korean translations, then made it so if the user's browser language
 was set to Korean, the app would automatically switch to Korean.
 
