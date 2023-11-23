@@ -45,6 +45,7 @@ export default {
         <meta property="og:url" content={url} />
         <meta property="og:site_name" content="Kyle Awayan" />
         <meta property="twitter:card" content="summary_large_image" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         {title && <title>{titleWithName}</title>}
         {title && <meta property="og:title" content={titleWithName} />}
         {meta.description ? (
