@@ -35,7 +35,12 @@ export default function Meta(): ReactElement {
     </Link>
   ))
 
-  const readingTime = opts.readingTime?.text
+  let readingTime = opts.readingTime?.text
+
+  if (opts.readingTime && opts.readingTime.minutes <= 1) {
+    readingTime = undefined
+  }
+
   const dateObj = date ? new Date(date) : null
   return (
     <div

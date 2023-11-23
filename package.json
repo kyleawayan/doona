@@ -9,6 +9,7 @@
     "build:theme-docs": "pnpm build --filter=nextra-theme-docs",
     "clean": "turbo run clean",
     "dev:core": "turbo run dev --filter=nextra... --filter=!docs",
+    "dev:doona": "turbo run dev --filter=doona... --filter=!docs",
     "dev:theme-blog": "turbo run dev --filter=example-blog... --filter=!docs",
     "dev:theme-docs": "turbo run dev --filter=swr-site... --filter=!docs",
     "dev:website": "turbo run dev --filter=docs...",
