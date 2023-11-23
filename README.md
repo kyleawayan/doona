@@ -10,22 +10,10 @@ everything hooked up together, I just decided to put my portfolio in here.
 
 ### Versioning
 
-To keep a somewhat semantic versioning system while still being able to fetch
-from the upstream repo, please treat the `doona` branch as the main branch of
-this repository. Please use
-[changeset's prerelease features](https://github.com/changesets/changesets/blob/main/docs/prereleases.md)
-in the `doona` branch.
-
-Versions for the doona-modified Nextra packages will be in the format:
-
-```
-<upstream version>-doona.<doona version>
-```
-
-e.g. `2.13.2-doona.23`. The actual `doona` app is not versioned.
-
-The actual `main` branch in this repository will be used to fetch upstream
-changes (from the [main Nextra repository](https://github.com/shuding/nextra)).
+Please use [changesets](https://github.com/changesets/changesets) when making
+changes to the Nextra packages. Right now I don't have a system for versioning
+this fork, but it's nice to keep track now just in case a changelog is needed
+later on.
 
 ### Installation
 
