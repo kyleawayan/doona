@@ -1,3 +1,6 @@
+import { useRouter } from 'next/router'
+import { AWSServerlessImageEncodeUrl } from 'nextra-theme-blog'
+
 /* eslint sort-keys: error */
 export default {
   awsServerlessImageHandlerConfig: {
@@ -13,9 +16,37 @@ export default {
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
       {new Date().getFullYear()} © Kyle Awayan.
-      <a href="/feed.xml">RSS</a>
+      <div className="footerLinks">
+        <a
+          href="https://www.linkedin.com/in/kyleawayan/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+        {' · '}
+        <a
+          href="https://github.com/kyleawayan"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        {' · '}
+        <a
+          href="http://youtube.com/@kyleawayan"
+          target="_blank"
+          rel="noreferrer"
+        >
+          YouTube
+        </a>
+        {' · '}
+        <a href="mailto:kyle@awayan.com" target="_blank" rel="noreferrer">
+          kyle@awayan.com
+        </a>
+      </div>
       <style jsx>{`
-        a {
+        .footerLinks {
           float: right;
         }
 
@@ -27,5 +58,49 @@ export default {
         }
       `}</style>
     </small>
-  )
+  ),
+  head: ({ title, meta }) => {
+    const { asPath, defaultLocale, locale } = useRouter()
+
+    const url =
+      'https://kyleawayan.com' +
+      (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
+
+    const titleWithName = `${title} - Kyle Awayan`
+
+    const useSummaryLargeImage = url !== 'https://kyleawayan.com/'
+
+    return (
+      <>
+        <meta property="og:url" content={url} />
+        <meta property="og:site_name" content="Kyle Awayan" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        {useSummaryLargeImage && (
+          <meta property="twitter:card" content="summary_large_image" />
+        )}
+        {title && <title>{titleWithName}</title>}
+        {title && <meta property="og:title" content={titleWithName} />}
+        {meta.description ? (
+          <meta property="og:type" content="article" />
+        ) : (
+          <meta property="og:type" content="website" />
+        )}
+        {meta.description && (
+          <meta name="description" content={meta.description} />
+        )}
+        {meta.description && (
+          <meta property="og:description" content={meta.description} />
+        )}
+        {meta.coverKey && (
+          <meta
+            property="og:image"
+            content={AWSServerlessImageEncodeUrl(meta.coverKey, 800)}
+          />
+        )}
+        {meta.coverAlt && (
+          <meta property="og:image:alt" content={meta.coverAlt} />
+        )}
+      </>
+    )
+  }
 }

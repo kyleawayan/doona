@@ -1,0 +1,65 @@
+---
+title: 'Gemini'
+description: 'The aesthetic now playing app for Spotify.'
+coverKey: gemini/vlcsnap-2023-11-22-13h21m49s207-1920x1080.png
+coverAlt:
+  A 3D render of the Gemini app window. The album art of NIKI's "Moonchild"
+  album is shown filling the whole window's background. The album art depicts an
+  ethereal scene with NIKI floating in a dark space. NIKI is dressed in a
+  flowing white garment that gives the impression of lightness and movement, as
+  if she is suspended in air or underwater. The surrounding darkness contrasts
+  sharply with the brightness of the person's attire and skin, drawing focus to
+  NIKI. The text "MOONCHILD" is written at the bottom of the album art. There is
+  a backward, forward, and play/pause button at the bottom of the window. In the
+  center left, there is bold text that reads "Tide", and under that text is
+  smaller text that reads "NIKI".
+date: 2020/09/01
+---
+
+import { Bleed } from 'nextra-theme-blog'
+import { Cards } from 'nextra/components'
+import { CopyIcon, GitHubIcon } from 'nextra/icons'
+import ImageWithCaption from '../../components/ImageWithCaption'
+
+<Bleed>
+  <iframe
+    className="aspect-video w-full"
+    src="https://www.youtube-nocookie.com/embed/jIU53YdR9Tw?si=aFyg00W71UI-uIg5&autoplay=1&mute=1&playlist=jIU53YdR9Tw&loop=1&color=white"
+    title="YouTube video player"
+    frameBorder="0"
+  />
+</Bleed>
+
+<div className="my-24 text-2xl">
+  Gemini is an aesthetic "now playing" player for Spotify. It shows the title
+  and artist of the song with the album art filling the background of the
+  screen. It is an app that you can put in like a boba shop, so people know what
+  song is playing—in an aesthetic way.
+</div>
+
+<Bleed>
+  <ImageWithCaption
+    src="gemini/Screen Shot 2020-12-11 at 6.41.14 PM-1844x1844.png"
+    alt={
+      'A screenshot of the Gemini app, running on macOS. The top-left of the image has macOS window control buttons (red, yellow, green). The top-right has a pin button. The album art of NIKI\'s "Zephyr" album is shown filling the whole window\'s background. It features a central image of NIKI with their eyes closed, seemingly at peace, with their head tilted slightly to the side. Her hair is wet or slicked back, and she is surrounded by soft focus flowers and greenery, giving the impression of a serene, natural setting. On the bottom of the window, from left to right, there is a menu icon, shuffle icon, backward icon, play/pause icon, forward icon, and repeat icon. In the center of the window, there is bold text that reads "Vintage", and under that text is smaller text that reads "NIKI".'
+    }
+  />
+</Bleed>
+
+Built with Electron and Spotify's official API. OAuth 2.0 PKCE flow implemented.
+
+Check out the source code, or download Gemini on
+[GitHub](https://github.com/kywagaha/gemini).
+
+<Cards>
+  <Cards.Card
+    href="https://github.com/kywagaha/gemini"
+    icon={<GitHubIcon />}
+    title="Gemini on GitHub"
+  />
+  <Cards.Card
+    href="https://github.com/kywagaha/gemini/releases"
+    icon={<CopyIcon />}
+    title="Download Gemini"
+  />
+</Cards>

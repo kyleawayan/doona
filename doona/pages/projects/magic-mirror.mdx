@@ -1,0 +1,114 @@
+---
+title: Magic Mirror
+description: A mirror that magically displays information.
+coverKey: magic-mirror/9a26573fc3cb19bc3ef904b1afe645f07365c10a-3265x4898.webp
+coverAlt:
+  "A shot of the front of the Magic Mirror. In the mirror's reflection, Kyle is
+  seen holding his DSLR camera to take a picture of the Magic Mirror. The Mirror
+  magically shows information 'through' the mirror: on the top, the time, date,
+  weather, weekly forecast, calendar events are shown. News headlines are shown
+  at the bottom of the mirror. Alongside the mirror is an iPhone 5. The iPhone
+  shows a folder on the home screen, with the folder's name being 'Mirror'. The
+  folder contains three shortcuts: 'Start', 'Restart', and 'Shut Down'. The
+  start button icon is a white play icon on a black background. The restart
+  button icon is a white circular pattern on a blue background. The shut down
+  icon is a white, hollow square on a red background."
+date: 2016/04/05
+---
+
+import ImageWithCaption from '../../components/ImageWithCaption'
+
+It was a long time ago... but my first ever project that involved what I do now
+as a software engineer was a Magic Mirror. I don't remember exactly why I wanted
+to build one, but most likely it was because it popped up online somewhere and
+had to do with a Raspberry Pi, and I thought it was cool.
+
+I used MichMich's [MagicMirror²](https://github.com/MichMich/MagicMirror)
+platform for the software. His software is what runs on the Raspberry Pi, and
+shows things like the time and weather on the screen behind the mirror. It is
+also modular, so there are a bunch of plugins available.
+
+After messing around with the software on a Raspberry Pi, I made the decision to
+make a full-fledged Magic Mirror. With my dad's help, we had to make a frame
+that held a screen behind a mirror.
+
+I first stripped an old monitor we had laying around.
+
+<ImageWithCaption
+  src="magic-mirror/336bcb964f045dcf5b4d17acc5e3a0ba458ef33d-1536x2049.webp"
+  alt='The "brains" of the monitor, which looks like a metal enclosure holding the components to power the monitor. The actual screen is detached from the "brains" of the monitor.'
+  caption='The thing in the center is the "brains" of the monitor.'
+/>
+
+In front of the screen would be a two-way mirror from a glass shop, TAP
+Plastics. It's basically a mirror that reflects on one side, but is see-through
+on the other side. By putting a screen behind the mirror, you'll be able to see
+the text on the screen while still being able to see your reflection.
+
+<ImageWithCaption
+  src="magic-mirror/explode-1314x801.png"
+  alt='A basic schematic of the Magic Mirror. It shows an "explosion" view of the three main pieces from left to right: the wooden frame, the two-way mirror, and the monitor. The monitor is behind the two-way mirror, and the two-way mirror is behind the wooden frame.'
+  caption="Image from magicmirror.builders"
+/>
+
+We constructed the frame in a way that we can slide the mirror up and down in
+front of the screen. I was going to present this at my local DIY show & tell
+convention called the Maker Faire, so it was best for demonstration purposes and
+also if I ever need to replace the mirror.
+
+<ImageWithCaption
+  src="magic-mirror/a723cfe218f696f90c3fffe2c78e6c3a922cf718-282x500.gif"
+  alt="An animated GIF of Kyle lifting the mirror up and down. The mirror slides cleanly up and down within the wooden frame."
+/>
+
+After we built the frame, the Magic Mirror was finished.
+
+<ImageWithCaption
+  src="magic-mirror/9a26573fc3cb19bc3ef904b1afe645f07365c10a-3265x4898.webp"
+  alt={
+    'A shot of the front of the Magic Mirror. In the mirror\'s reflection, Kyle is seen holding his DSLR camera to take a picture of the Magic Mirror. The Mirror magically shows information "through" the mirror: on the top, the time, date, weather, weekly forecast, calendar events is shown. News headlines are shown at the bottom of the mirror. Alongside the mirror is an iPhone 5. The iPhone shows a folder on the home screen, with the folder\'s name being "Mirror". The folder contains three shortcuts: "Start", "Restart", and "Shut Down". The start button icon is a white play icon on a black background. The restart button icon is a white circular pattern on a blue background. The shut down icon is a white, hollow square on a red background.'
+  }
+  caption="I also had shortcuts on my iPhone's home screen to start, restart, and shut down the mirror!"
+/>
+
+<ImageWithCaption
+  src="magic-mirror/2fbbdc93cc307e86ee2dcb555910307b874226c4-3024x4032.webp"
+  alt={
+    'A shot of the back of the Magic Mirror. The wooden frame encloses the "brains" of the monitor. There are power cables and a HDMI cable coming out of the monitor. On the left side of the wooden casing is the monitor\'s buttons circuit board torn off and attached to the wooden casing.'
+  }
+  caption="View of the back."
+/>
+
+There is an outlet splitter for the monitor and Raspberry Pi. There is also an
+HDMI input (with a DVI adapter) for the monitor. This makes all the cables nice
+and compact, ultimately just only needing one outlet from the outside.
+
+A week later, I presented it at my local Maker Faire, a DIY show & tell
+convention!
+
+<ImageWithCaption
+  src="magic-mirror/f8bd93d04ab2bdf8f9ce52730eecc56b91fc3be6-1536x2049.webp"
+  alt={
+    'The Magic Mirror is elevated on a stand, about the height where someone can stand straight in front of it. In the reflection, you can see Kyle pointing at the mirror, along with the overlay of the various information showing "through" the mirror. Additionally, a video is playing towards the bottom of the mirror. Behind Kyle in the mirror\'s reflection, there are various stands and people. The stands are covered with various projects. Beside the mirror, the image partly shows a poster that says "Digital Mirror (Magic Mirror)", along with a screenshot of the Magic Mirror user interface, labeling what each section of the mirror shows.'
+  }
+/>
+
+After that, I left it on my desk for a while. It was later put away since I
+wanted to make more space on my desk.
+
+I actually made another one for my robotics high school class a year later. We
+were making an escape room, and it would've been perfect to implement. Nobody
+would expect to see text on the mirror itself!
+
+<div className="large-container grid grid-cols-2 gap-2">
+  <ImageWithCaption
+    src="magic-mirror/125ba039336fe6ff9b1f9fc75ee5ee2af4623df9-3024x4032.webp"
+    alt="A monitor is placed on the floor, resting on a shelf sitting upright. An wrapped mirror is placed in front of the monitor."
+    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+  />
+  <ImageWithCaption
+    src="magic-mirror/c7078aadf222cbf59a1011b8972ad0a2925d06c9-3024x4032.webp"
+    alt='The same monitor mentioned before is now powered on, with the mirror unwrapped. Information is showing "through" the mirror.'
+    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+  />
+</div>
