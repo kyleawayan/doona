@@ -15,6 +15,9 @@ changes to the Nextra packages. Right now I don't have a system for versioning
 this fork, but it's nice to keep track now just in case a changelog is needed
 later on.
 
+I will try my best to keep the Nextra packages up to date with the upstream in
+the `main` branch.
+
 ### Installation
 
 The doona repository uses [PNPM Workspaces](https://pnpm.io/workspaces) and
