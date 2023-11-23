@@ -68,12 +68,16 @@ export default {
 
     const titleWithName = `${title} - Kyle Awayan`
 
+    const useSummaryLargeImage = url !== 'https://kyleawayan.com/'
+
     return (
       <>
         <meta property="og:url" content={url} />
         <meta property="og:site_name" content="Kyle Awayan" />
-        <meta property="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        {useSummaryLargeImage && (
+          <meta property="twitter:card" content="summary_large_image" />
+        )}
         {title && <title>{titleWithName}</title>}
         {title && <meta property="og:title" content={titleWithName} />}
         {meta.description ? (
