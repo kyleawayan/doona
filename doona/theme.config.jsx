@@ -84,6 +84,9 @@ export default {
         {meta.description && (
           <meta name="description" content={meta.description} />
         )}
+        {meta.description && (
+          <meta property="og:description" content={meta.description} />
+        )}
         {meta.coverKey && (
           <meta
             property="og:image"
