@@ -66,7 +66,11 @@ export default {
       'https://kyleawayan.com' +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
 
-    const titleWithName = `${title} - Kyle Awayan`
+    if (title === 'About') {
+      title = 'Kyle Awayan'
+    } else {
+      title = `${title} - Kyle Awayan`
+    }
 
     const useSummaryLargeImage = url !== 'https://kyleawayan.com/'
 
@@ -78,8 +82,8 @@ export default {
         {useSummaryLargeImage && (
           <meta property="twitter:card" content="summary_large_image" />
         )}
-        {title && <title>{titleWithName}</title>}
-        {title && <meta property="og:title" content={titleWithName} />}
+        {title && <title>{title}</title>}
+        {title && <meta property="og:title" content={title} />}
         {meta.description ? (
           <meta property="og:type" content="article" />
         ) : (
