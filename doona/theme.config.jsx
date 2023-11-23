@@ -16,9 +16,37 @@ export default {
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
       {new Date().getFullYear()} © Kyle Awayan.
-      <a href="/feed.xml">RSS</a>
+      <div className="footerLinks">
+        <a
+          href="https://www.linkedin.com/in/kyleawayan/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+        {' · '}
+        <a
+          href="https://github.com/kyleawayan"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        {' · '}
+        <a
+          href="http://youtube.com/@kyleawayan"
+          target="_blank"
+          rel="noreferrer"
+        >
+          YouTube
+        </a>
+        {' · '}
+        <a href="mailto:kyle@awayan.com" target="_blank" rel="noreferrer">
+          kyle@awayan.com
+        </a>
+      </div>
       <style jsx>{`
-        a {
+        .footerLinks {
           float: right;
         }
 
