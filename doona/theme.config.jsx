@@ -1,3 +1,6 @@
+import { useRouter } from 'next/router'
+import { AWSServerlessImageEncodeUrl } from 'nextra-theme-blog'
+
 /* eslint sort-keys: error */
 export default {
   awsServerlessImageHandlerConfig: {
@@ -27,5 +30,41 @@ export default {
         }
       `}</style>
     </small>
-  )
+  ),
+  head: ({ title, meta }) => {
+    const { asPath, defaultLocale, locale } = useRouter()
+
+    const url =
+      'https://kyleawayan.com' +
+      (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
+
+    const titleWithName = `${title} - Kyle Awayan`
+
+    return (
+      <>
+        <meta property="og:url" content={url} />
+        <meta property="og:site_name" content="Kyle Awayan" />
+        <meta property="twitter:card" content="summary_large_image" />
+        {title && <title>{titleWithName}</title>}
+        {title && <meta property="og:title" content={titleWithName} />}
+        {meta.description ? (
+          <meta property="og:type" content="article" />
+        ) : (
+          <meta property="og:type" content="website" />
+        )}
+        {meta.description && (
+          <meta name="description" content={meta.description} />
+        )}
+        {meta.coverKey && (
+          <meta
+            property="og:image"
+            content={AWSServerlessImageEncodeUrl(meta.coverKey, 800)}
+          />
+        )}
+        {meta.coverAlt && (
+          <meta property="og:image:alt" content={meta.coverAlt} />
+        )}
+      </>
+    )
+  }
 }
