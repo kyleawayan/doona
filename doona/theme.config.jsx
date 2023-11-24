@@ -9,9 +9,8 @@ export default {
   },
   darkMode: false,
   dateFormatter: date => {
-    // eslint-disable-next-line sort-keys
-    const options = { year: 'numeric', month: 'short', day: '2-digit' }
-    return date.toLocaleDateString(undefined, options).replaceAll(',', '')
+    const options = { month: 'long', year: 'numeric' }
+    return date.toLocaleDateString(undefined, options)
   },
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>

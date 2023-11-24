@@ -17,7 +17,10 @@ import { Bleed } from 'nextra-theme-blog'
 import ImageWithCaption from '../../components/ImageWithCaption'
 
 <Bleed>
-  <ImageWithCaption src="face-recognition-2/e1b0667b813c142ccaf133a39be3a420c29fdf6b-2156x1725.jpg" />
+  <ImageWithCaption
+    src="face-recognition-2/e1b0667b813c142ccaf133a39be3a420c29fdf6b-2156x1725.jpg"
+    priority
+  />
 </Bleed>
 
 I have trouble memorizing members in Korean pop groups, so I wanted to create a
@@ -72,10 +75,12 @@ learn to differentiate between each person.
 
 Finally, the model can be used to identify faces in videos.
 
-To analyze a music video with the model, a script goes through each frame of the
-video and tries to detect any faces. If it does, it will crop into the face, and
-inference—or "ask"—the model who it thinks it is. The script then overlays the
-prediction info in the video.
+To analyze a music video with the TensorFlow model, a script goes through each
+frame of the video and tries to detect faces with the `face_recognition`
+library. If it detects any faces, it will crop into the face, then collect the
+face encodings. The script will then inference—or "ask"—the TensorFlow model who
+it thinks it is, based on the collected face encodings. The script then overlays
+the model's prediction on the video frame.
 
 <ImageWithCaption
   src="face-recognition-2/0447c1c01eec93746325d3b7cdf07641e74c7daf-2025x2025.webp"
