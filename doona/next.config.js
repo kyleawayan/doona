@@ -19,5 +19,14 @@ export default withNextra({
         pathname: '/**'
       }
     ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/zuzu',
+        destination: '/projects/face-recognition-2',
+        permanent: true
+      }
+    ]
   }
 })
