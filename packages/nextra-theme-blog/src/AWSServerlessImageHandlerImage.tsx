@@ -97,13 +97,15 @@ export type ServerlessImageHandlerImageProps = {
   alt: string
   square?: boolean
   sizes?: string
+  priority?: boolean
 }
 
 export function AWSServerlessImageHandlerImage({
   src,
   alt,
   square,
-  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+  priority
 }: ServerlessImageHandlerImageProps) {
   const { config } = useBlogContext()
   const { width, height } = parseEverCdnKeyAndGetImgDim(src, square)
@@ -125,6 +127,7 @@ export function AWSServerlessImageHandlerImage({
       width={width}
       height={height}
       loader={p => imageLoader({ ...p, bucketName, apiEndpoint, square })}
+      priority={priority}
     />
   )
 }
