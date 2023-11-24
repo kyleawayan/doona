@@ -1,0 +1,138 @@
+---
+title: 'Zuzu'
+description: 'The AI That Recognizes Faces in Music Videos'
+coverKey: face-recognition-2/0447c1c01eec93746325d3b7cdf07641e74c7daf2-2025x2025.jpg
+coverAlt:
+  A picture of Tzuyu from TWICE. There is a green rectangle around her face,
+  with text above it saying "Tzuyu". There is also more text to the right of her
+  face. It is the list of confidences for each person in the model. Mina has a
+  0% confidence. Jeongyeon has a 2% confidence. Chaeyoung has a 7% confidence.
+  Dahyun has a 1% confidence. Momo has a 0% confidence. Sana has a 1%
+  confidence. Tzuyu has a 89% confidence. Nayeon has a 0% confidence. Jihyo has
+  a 0% confidence.
+date: 2021/04/29
+---
+
+import { Bleed } from 'nextra-theme-blog'
+import ImageWithCaption from '../../components/ImageWithCaption'
+
+<Bleed>
+  <ImageWithCaption src="face-recognition-2/e1b0667b813c142ccaf133a39be3a420c29fdf6b-3840x1725.webp" />
+</Bleed>
+
+I have trouble memorizing members in Korean pop groups, so I wanted to create a
+program that will overlay their names on their music videos.
+
+This project uses machine learning in order to recognize people. We give the
+computer several images of people, categorized with their names, and the
+computer learns from those images.
+
+I used the Python libraries to help me build this project:
+[`face_recognition`](https://github.com/ageitgey/face_recognition) and
+[`tensorflow`](https://www.tensorflow.org). Face recognition is taken care of
+with the `face_recognition` library, leveraging on [`dlib`](http://dlib.net)'s
+face recognition. The face recognition data is passed to TensorFlow, where it
+can predict people's names.
+
+The first step is to get a bunch of photos of the people we want to identify and
+train a TensorFlow model based on that data.
+
+To get a bunch of photos of someone, my friend made a
+[script that mass downloads images from Bing](https://github.com/natdosan/Image-Scraper-using-Bing-API).
+We did try to use Google Images, but their API severely limits getting lots of
+photos (last time we checked). Also, Bing is way better at showing pictures of
+the person we want. Google would usually mix group photos and other photos not
+related to our search query. We also sometimes use photos from fan accounts of
+Korean pop group members.
+
+Next, we need to get face encodings from each photo. Face encodings are a set of
+128 numbers that represent someone's face features. It only takes measurements
+from the face—things like hair and skin color are not measured. The
+`face_recognition` library can look at a photo, and if it finds a face, it
+generates the face encodings data for that face. We then can feed those face
+encodings into a TensorFlow model.
+
+Once there are around an equal number of photos of each person obtained, a
+script collects all the face encodings from each photo. We utilize some of
+`face_recognition`'s utility functions to pre-process and analyze the photos. If
+a face is not detected in a photo, the photo is thrown out. If a face is
+detected, the script will crop into the person's face, and collect the face
+encodings. Each person will have their own categorized face encodings, along
+with their name so the model can learn who they are.
+
+A machine learning model is made using the face encodings data. For this
+project, a sequential Keras model is used. I had to setup the layers for the
+neural network and compile the model first. I based it off of
+[this example](https://www.tensorflow.org/tutorials/keras/classification).
+
+In a nutshell, the TensorFlow model will learn how to identify a person's face
+based only on the face encodings we collected—the 128 numbers the computer
+understands as a "face". Based on the face encodings given to the model, it will
+learn to differentiate between each person.
+
+Finally, the model can be used to identify faces in videos.
+
+To analyze a music video with the model, a script goes through each frame of the
+video and tries to detect any faces. If it does, it will crop into the face, and
+inference--or "ask"--the model who it thinks it is. The script then overlays the
+prediction info in the video.
+
+<ImageWithCaption
+  src="face-recognition-2/0447c1c01eec93746325d3b7cdf07641e74c7daf-2025x2025.webp"
+  alt='A picture of Tzuyu from TWICE. There is a green rectangle around her face,
+  with text above it saying "Tzuyu". There is also more text to the right of her
+  face. It is the list of confidences for each person in the model. Mina has a
+  0% confidence. Jeongyeon has a 2% confidence. Chaeyoung has a 7% confidence.
+  Dahyun has a 1% confidence. Momo has a 0% confidence. Sana has a 1%
+  confidence. Tzuyu has a 89% confidence. Nayeon has a 0% confidence. Jihyo has
+  a 0% confidence.'
+/>
+
+A threshold of 0.5 is set. That means the model has to be at least 50% confident
+on a prediction to determine it has identified someone correctly. This is merely
+a visual thing, as it just changes the color of the overlay on the person's
+face. A green overlay means that it's most likely correct, while a red overlay
+means it's most likely not.
+
+The script exports all the frames with overlays as JPG images into a folder. I
+use DaVinci Resolve to put the image sequence together and sync the audio.
+Here's a video that did really well in terms of recognizing people correctly:
+
+<Bleed>
+  <iframe
+    className="aspect-video w-full"
+    src="https://www.youtube.com/embed/lAyz3tI5mYY?si=yUvllLbc-A906Nk-&color=white"
+    title="YouTube video player"
+    frameBorder="0"
+  />
+</Bleed>
+
+Usually a single TensorFlow model will contain faces data for only a single
+Korean pop group. I have been making models for multiple Korean pop groups and
+have been running this on multiple music videos. I upload them to
+[this YouTube channel](https://www.youtube.com/channel/UCFDe8fyhGR_SUj_8ribSNIg).
+
+---
+
+The goal is to get a good model that can recognize people with high accuracy.
+However to get there, we need a _lot_ of photos for each person. Mass
+downloading images off the internet is really helpful, but all of those images
+don't always have the correct person. Some of the images may contain group
+photos or the wrong person. Filtering through downloaded photos will improve the
+model.
+
+Also, music videos are very fast and usually don't have very clear views of
+faces. I don't think the model will get better in that scenario. Lots of
+pictures of each person at every angle will be needed. Music videos where people
+aren't moving/dancing very fast or where the people face the camera mostly are
+better for recognizing faces.
+
+This project has exceeded my expectations. It recognizing faces from very far
+away to being semi-blocked surprised me. As I keep diving into machine learning,
+I want to further explore ways I can make this project better. I hope this tool
+can help me and others learn members in Korean pop groups faster and easier.
+
+I also want to thank my friends for helping me with this project. This project
+wouldn't have been possible without them. They always give me suggestions on
+which videos/groups to run this on and most importantly, verify that the AI is
+recognizing members correctly.
