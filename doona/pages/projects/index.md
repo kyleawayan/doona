@@ -17,3 +17,5 @@ coverAlt:
 ---
 
 # Projects
+
+## Some passion projects of mine
