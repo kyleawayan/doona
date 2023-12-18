@@ -1,5 +1,6 @@
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import localFont from 'next/font/local'
 
 const inter = localFont({
@@ -26,6 +27,7 @@ export default function App({ Component, pageProps }) {
     <main className={`${inter.variable} ${iosevka.variable}`}>
       <Component {...pageProps} />
       <Analytics />
+      <SpeedInsights />
     </main>
   )
 }
