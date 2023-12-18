@@ -1,0 +1,41 @@
+---
+type: page
+title: Work
+date: 2023-11-23
+description: "I'm a fourth year undergrad at the University of California, Merced. I'm
+majoring in Computer Science. I'm interested in web and app development, as well
+as making videos."
+coverKey: "profile_face.jpg"
+coverAlt: "A professional studio picture of Kyle Awayan"
+---
+
+export function ContributonCard({ children, link }) {
+  return (
+    <a href={link} target="_blank" rel="noreferrer" className="text-xl">
+      {children}
+    </a>
+  )
+}
+
+# Work
+
+## Front-end engineer at Chan Zuckerberg Biohub in San Francisco
+
+Helped scientists develop websites and visualizations for their research.
+
+### Noteable contributions
+
+<div className="grid grid-cols-2 gap-4">
+  <ContributonCard link="https://zebrahub.ds.czbiohub.org">
+    Zebrahub <br /> An atlas of zebrafish embryonic development
+  </ContributonCard>
+  <ContributonCard link="https://tabula-microcebus.ds.czbiohub.org">
+    Tabula Microcebus <br /> A transcriptomic cell atlas of mouse lemur
+  </ContributonCard>
+  <ContributonCard link="https://tabula-sapiens-portal.ds.czbiohub.org">
+    Tabula Sapiens <br /> A multiple-organ, single-cell transcriptomic atlas of
+    humans
+  </ContributonCard>
+</div>
+
+## Undergraduate student researcher at Cobian-Iñiguez Fire Lab in the University of California, Merced

@@ -1,6 +1,7 @@
 ---
 type: posts
 title: Projects
+date: 2023-11-22
 description: Projects by Kyle Awayan.
 coverKey: magic-mirror/9a26573fc3cb19bc3ef904b1afe645f07365c10a-3265x4898.webp
 coverAlt:
