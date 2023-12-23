@@ -26,8 +26,10 @@ export const ArticleLayout = ({ children }: { children: ReactNode }) => {
   const { directLink } = opts.frontMatter
 
   useEffect(() => {
-    // .replace() to not add to browser history
-    window.location.replace(directLink)
+    if (directLink) {
+      // .replace() to not add to browser history
+      window.location.replace(directLink)
+    }
   }, [directLink])
 
   if (directLink) {
