@@ -9,6 +9,21 @@ import Nav from './nav'
 import { collectPostsAndNavs } from './utils/collect'
 import getTags from './utils/get-tags'
 
+function getLinkText(externalLink: string): string {
+  const url = new URL(externalLink)
+  const { hostname } = url
+
+  // Define a mapping of hostnames to display names
+  const services: { [key: string]: string } = {
+    'www.youtube.com': 'YouTube →',
+    'youtube.com': 'YouTube →',
+    'www.github.com': 'GitHub →',
+    'github.com': 'GitHub →'
+  }
+
+  return services[hostname] || 'External Link →'
+}
+
 export function PostsLayout({
   children
 }: {
@@ -34,6 +49,41 @@ export function PostsLayout({
     const description = post.frontMatter?.description
     const coverKey = post.frontMatter?.coverKey
     const coverAlt = post.frontMatter?.coverAlt
+    const directLink = post.frontMatter?.directLink
+
+    if (directLink) {
+      return (
+        <div key={post.route} className="post-item">
+          <a href={directLink}>
+            <div className="nx-not-prose nx-w-full nx-aspect-square nx-bg-gray-400">
+              {coverKey && (
+                <AWSServerlessImageHandlerImage
+                  src={coverKey}
+                  alt={coverAlt}
+                  square
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
+                />
+              )}
+            </div>
+          </a>
+          <h3 className="!nx-mb-1 !nx-mt-3">
+            <a href={directLink} className="!nx-no-underline">
+              {postTitle}
+            </a>
+          </h3>
+          {description && (
+            <p className="nx-mb-2 dark:nx-text-gray-400 nx-text-gray-600">
+              {description}
+              {config.readMore && (
+                <a href={directLink} className="post-item-more nx-ml-2">
+                  {getLinkText(directLink)}
+                </a>
+              )}
+            </p>
+          )}
+        </div>
+      )
+    }
 
     return (
       <div key={post.route} className="post-item">
