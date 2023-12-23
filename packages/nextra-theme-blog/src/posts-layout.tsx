@@ -18,7 +18,8 @@ function getLinkText(externalLink: string): string {
     'www.youtube.com': 'YouTube →',
     'youtube.com': 'YouTube →',
     'www.github.com': 'GitHub →',
-    'github.com': 'GitHub →'
+    'github.com': 'GitHub →',
+    'devpost.com': 'Devpost →'
   }
 
   return services[hostname] || 'External Link →'
