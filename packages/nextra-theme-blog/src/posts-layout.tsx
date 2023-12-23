@@ -9,6 +9,21 @@ import Nav from './nav'
 import { collectPostsAndNavs } from './utils/collect'
 import getTags from './utils/get-tags'
 
+function getLinkText(externalLink: string): string {
+  const url = new URL(externalLink)
+  const { hostname } = url
+
+  // Define a mapping of hostnames to display names
+  const services: { [key: string]: string } = {
+    'www.youtube.com': 'YouTube →',
+    'youtube.com': 'YouTube →',
+    'www.github.com': 'GitHub →',
+    'github.com': 'GitHub →'
+  }
+
+  return services[hostname] || 'External Link →'
+}
+
 export function PostsLayout({
   children
 }: {
@@ -61,7 +76,7 @@ export function PostsLayout({
               {description}
               {config.readMore && (
                 <a href={directLink} className="post-item-more nx-ml-2">
-                  External Link →
+                  {getLinkText(directLink)}
                 </a>
               )}
             </p>
