@@ -59,6 +59,23 @@ module.exports = {
               fontWeight: 600
             }
           }
+        },
+        resume: {
+          css: {
+            h1: {
+              marginBottom: theme('spacing.2')
+            },
+            h2: {
+              marginBottom: theme('spacing.2'),
+              // Full width underline
+              borderBottomWidth: theme('borderWidth.2'),
+              borderBottomColor: theme('colors.gray.200')
+            },
+            h3: {
+              marginTop: theme('spacing.0'),
+              marginBottom: theme('spacing.0')
+            }
+          }
         }
       })
     }

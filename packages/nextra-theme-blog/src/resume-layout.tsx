@@ -6,17 +6,16 @@ import { useBlogContext } from './blog-context'
 import { HeadingContext, MDXTheme } from './mdx-theme'
 
 export const ResumeLayout = ({ children }: { children: ReactNode }) => {
-  const { config, opts } = useBlogContext()
-  const title = `${opts.title}${config.titleSuffix || ''}`
+  const { opts } = useBlogContext()
+  const title = `${opts.title}_Resume`
   const ref = useRef<HTMLHeadingElement>(null)
   return (
     <article
-      className="nx-container nx-prose nx-prose-neutral nx-prose-lesserafim max-md:nx-prose-sm dark:nx-prose-invert"
+      className="nx-prose nx-prose-neutral nx-prose-lesserafim nx-prose-resume dark:nx-prose-invert nx-prose-sm nx-max-w-2xl nx-py-4"
       dir="ltr"
     >
       <Head>
         <title>{title}</title>
-        {config.head?.({ title, meta: opts.frontMatter })}
       </Head>
       <HeadingContext.Provider value={ref}>
         {opts.hasJsxInH1 ? <h1 ref={ref} /> : null}
