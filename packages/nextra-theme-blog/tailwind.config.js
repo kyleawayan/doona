@@ -62,6 +62,8 @@ module.exports = {
         },
         resume: {
           css: {
+            fontSize: '.8rem',
+            lineHeight: '1.3',
             h1: {
               marginBottom: theme('spacing.2')
             },
@@ -72,6 +74,14 @@ module.exports = {
               borderBottomColor: theme('colors.gray.200')
             },
             h3: {
+              marginTop: theme('spacing.0'),
+              marginBottom: theme('spacing.0')
+            },
+            ul: {
+              marginTop: theme('spacing.1'),
+              marginBottom: theme('spacing.1')
+            },
+            li: {
               marginTop: theme('spacing.0'),
               marginBottom: theme('spacing.0')
             }
