@@ -7,7 +7,7 @@ import { HeadingContext, MDXTheme } from './mdx-theme'
 
 export const ResumeLayout = ({ children }: { children: ReactNode }) => {
   const { opts } = useBlogContext()
-  const title = `${opts.title}_Resume`
+  const title = `${opts.title} Resume`
   const ref = useRef<HTMLHeadingElement>(null)
   return (
     <article
