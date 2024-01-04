@@ -4,6 +4,13 @@ title: Kyle Awayan
 date: 2024-12-01
 ---
 
+import {
+  EnvelopeMicroIcon,
+  GitHubIcon,
+  GlobeIcon,
+  PhoneMicroIcon
+} from 'nextra/icons'
+
 export function Title({ title, date, subtitle }) {
   return (
     <div className="mb-1">
@@ -18,10 +25,20 @@ export function Title({ title, date, subtitle }) {
   )
 }
 
+export function IconSpan({ icon: Icon }) {
+  return (
+    <span className="inline-block align-bottom">
+      <Icon className="w-4 h-4" />
+    </span>
+  )
+}
+
 # Kyle Awayan
 
-✉️ kyle@awayan.com · 📞 (707) 315-4916 · 🌐
-[kyleawayan.com](https://kyleawayan.com) {/* TODO: GITHUB */}
+<IconSpan icon={EnvelopeMicroIcon} /> kyle@awayan.com · <IconSpan
+  icon={PhoneMicroIcon}
+/> (707) 315-4916 · <IconSpan icon={GlobeIcon} /> [kyleawayan.com](https://kyleawayan.com)
+· <IconSpan icon={GitHubIcon} /> [kyleawayan](https://github.com/kyleawayan)
 
 Creative student with a passion for programming and digital media. Seeking the
 opportunity to leverage my skills and experiences to help improve this world,
