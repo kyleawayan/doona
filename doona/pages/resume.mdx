@@ -6,13 +6,13 @@ date: 2024-12-01
 
 export function Title({ title, date, subtitle }) {
   return (
-    <div className="flex justify-between mb-1">
-      <div>
+    <div className="mb-1">
+      <div className="flex justify-between items-end">
         <h3>{title}</h3>
-        <em>{subtitle}</em>
+        <span>{date}</span>
       </div>
       <div>
-        <span>{date}</span>
+        <em>{subtitle}</em>
       </div>
     </div>
   )
@@ -97,6 +97,8 @@ while expanding my knowledge and sharing it with others.
 
 ## Skills
 
+<div className="nx-not-prose">
+
 **Technologies:** Node.js, React, React Native, Google Cloud, Amazon Web
 Services, Terraform, Docker, PostgreSQL, Neo4j, MongoDB, InfluxDB, Grafana,
 Arduino, Adobe Suite, Figma, Resolume, TouchDesigner, Unreal Engine, Blender
@@ -106,6 +108,8 @@ LaTeX, Swift, R
 
 **Other Interests:** Music Production, Graphic Design, DJ, VJ, Stage Lighting
 Design, Music Theory, Skiing, Biking, Aviation, Traveling
+
+</div>
 
 ## Publications
 

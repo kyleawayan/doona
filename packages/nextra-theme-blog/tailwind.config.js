@@ -68,18 +68,23 @@ module.exports = {
               marginBottom: theme('spacing.2')
             },
             h2: {
+              marginTop: theme('spacing.5'),
               marginBottom: theme('spacing.2'),
               // Full width underline
               borderBottomWidth: theme('borderWidth.2'),
-              borderBottomColor: theme('colors.gray.200')
+              borderBottomColor: theme('colors.gray.200'),
+              fontSize: theme('fontSize.sm'),
+              fontStyle: 'italic'
             },
             h3: {
               marginTop: theme('spacing.0'),
-              marginBottom: theme('spacing.0')
+              marginBottom: theme('spacing.0'),
+              fontSize: theme('fontSize.sm')
             },
             ul: {
-              marginTop: theme('spacing.1'),
-              marginBottom: theme('spacing.1')
+              marginTop: theme('spacing.2'),
+              marginBottom: theme('spacing.2'),
+              marginLeft: theme('spacing.4')
             },
             li: {
               marginTop: theme('spacing.0'),
