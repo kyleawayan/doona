@@ -62,7 +62,7 @@ module.exports = {
         },
         resume_print: {
           css: {
-            fontSize: '.8rem',
+            fontSize: '.75rem',
             lineHeight: '1.3',
             h1: {
               marginBottom: theme('spacing.2')
