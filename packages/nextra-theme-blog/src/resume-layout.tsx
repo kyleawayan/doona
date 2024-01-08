@@ -11,7 +11,7 @@ export const ResumeLayout = ({ children }: { children: ReactNode }) => {
   const ref = useRef<HTMLHeadingElement>(null)
   return (
     <article
-      className="nx-prose nx-prose-neutral nx-prose-lesserafim nx-prose-resume dark:nx-prose-invert nx-max-w-2xl nx-py-4"
+      className="nx-prose nx-prose-neutral nx-prose-lesserafim nx-prose-resume_screen print:nx-prose-resume_print dark:nx-prose-invert nx-max-w-3xl print:nx-max-w-2xl print:nx-py-4"
       dir="ltr"
     >
       <Head>

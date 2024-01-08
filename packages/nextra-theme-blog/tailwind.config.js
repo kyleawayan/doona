@@ -60,7 +60,7 @@ module.exports = {
             }
           }
         },
-        resume: {
+        resume_print: {
           css: {
             fontSize: '.8rem',
             lineHeight: '1.3',
@@ -84,6 +84,27 @@ module.exports = {
             ul: {
               marginTop: theme('spacing.2'),
               marginBottom: theme('spacing.2'),
+              marginLeft: theme('spacing.4')
+            },
+            li: {
+              marginTop: theme('spacing.0'),
+              marginBottom: theme('spacing.0')
+            }
+          }
+        },
+        resume_screen: {
+          css: {
+            h2: {
+              // Full width underline
+              borderBottomWidth: theme('borderWidth.2'),
+              borderBottomColor: theme('colors.gray.200'),
+              fontStyle: 'italic'
+            },
+            h3: {
+              marginTop: theme('spacing.0'),
+              marginBottom: theme('spacing.0')
+            },
+            ul: {
               marginLeft: theme('spacing.4')
             },
             li: {

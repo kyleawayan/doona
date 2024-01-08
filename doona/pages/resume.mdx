@@ -15,7 +15,7 @@ import {
 export function Title({ title, date, subtitle }) {
   return (
     <div className="mb-1">
-      <div className="flex justify-between items-end">
+      <div className="flex flex-col md:flex-row md:items-end justify-between print:flex-row print:items-end">
         <h3>{title}</h3>
         <span>{date}</span>
       </div>
@@ -28,7 +28,7 @@ export function Title({ title, date, subtitle }) {
 
 export function IconSpan({ icon: Icon }) {
   return (
-    <span className="inline-block align-bottom">
+    <span className="inline-block print:align-bottom">
       <Icon className="w-4 h-4" />
     </span>
   )
