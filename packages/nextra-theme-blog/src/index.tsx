@@ -6,13 +6,15 @@ import { BlogProvider } from './blog-context'
 import { DEFAULT_THEME } from './constants'
 import { PageLayout } from './page-layout'
 import { PostsLayout } from './posts-layout'
+import { ResumeLayout } from './resume-layout'
 import type { LayoutProps } from './types'
 
 const layoutMap = {
   post: ArticleLayout,
   page: PageLayout,
   posts: PostsLayout,
-  tag: PostsLayout
+  tag: PostsLayout,
+  resume: ResumeLayout
 }
 
 const BlogLayout = ({

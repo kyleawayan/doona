@@ -1,0 +1,210 @@
+---
+type: resume
+title: Kyle Awayan
+date: 2024-12-01
+---
+
+import {
+  EnvelopeMicroIcon,
+  GitHubIcon,
+  GlobeIcon,
+  LinkedInIcon,
+  PhoneMicroIcon
+} from 'nextra/icons'
+
+export function Title({ title, date, subtitle }) {
+  return (
+    <div className="mb-1">
+      <div className="flex justify-between items-end">
+        <h3>{title}</h3>
+        <span>{date}</span>
+      </div>
+      <div>
+        <em>{subtitle}</em>
+      </div>
+    </div>
+  )
+}
+
+export function IconSpan({ icon: Icon }) {
+  return (
+    <span className="inline-block align-bottom">
+      <Icon className="w-4 h-4" />
+    </span>
+  )
+}
+
+# Kyle Awayan
+
+<IconSpan icon={EnvelopeMicroIcon} /> kyle@awayan.com · <IconSpan
+  icon={PhoneMicroIcon}
+/> (707) 315-4916 · <IconSpan icon={GlobeIcon} /> [kyleawayan.com](https://kyleawayan.com)
+· <IconSpan icon={GitHubIcon} /> [kyleawayan](https://github.com/kyleawayan) · <IconSpan
+  icon={LinkedInIcon}
+/> [/in/kyleawayan](https://www.linkedin.com/in/kyleawayan/)
+
+Creative student with a passion for programming and digital media. Seeking the
+opportunity to leverage my skills and experiences to help improve this world,
+while expanding my knowledge and sharing it with others.
+
+## Education
+
+<Title
+  title="University of California, Merced"
+  date="2020 - Graduating in 2024"
+  subtitle="Major: BS Computer Science & Engineering"
+/>
+
+<Title title="Benicia High School" date="2016 - 2020" subtitle="Diploma" />
+
+## Experience
+
+<Title
+  title="Data Scientist/Front-end Engineer Intern/Contractor"
+  date="June 2021 - Present"
+  subtitle="Chan Zuckerberg Biohub San Francisco"
+/>
+
+- Creating tools for broad sharing of data from various research projects
+- Includes creating web portals and interactive visualization tools using React,
+  Dash, Python, and AWS
+- Using data libraries such as anndata, scanpy, Microsoft Deep Zoom
+- Assisting colleagues with coding questions
+
+<Title
+  title="Undergraduate Student Researcher"
+  date="February 2021 - Present"
+  subtitle="Cobian-Iñiguez Fire Lab University of California, Merced"
+/>
+
+- Creating image processing pipelines and tools to collect and analyze data from
+  lab experiments
+- Using tools such as OpenCV, Python, PyQt, and MATLAB
+
+<Title
+  title="Teacher Assistant For Digital Media Class"
+  date="August 2019 - June 2020"
+  subtitle="Benicia High School Benicia, CA"
+/>
+
+- Helped students learn how to use camera gear and software (Adobe products)
+- Provided feedback on their work
+
+<Title
+  title="Photographer and Videographer"
+  date="March 2018 - November 2020"
+  subtitle="Freelancer Benicia, CA"
+/>
+
+- Captured special events (e.g.: quinceañeras, anniversaries, weddings)
+- Invited photographer or videographer colleagues when needed
+- Provided the team with guidelines on what to capture, and welcoming
+  suggestions from them
+
+## Awards
+
+<Title
+  title="Ganbare Scholarship"
+  date="2020"
+  subtitle="Benicia High School Panther Band"
+/>
+
+- The Ganbare (Japanese, meaning to persevere; to do one's best) Scholarship
+  recognized the Senior who has shown the most involvement and dedication in the
+  Benicia High School Panther Band-related activities, is the most willing to
+  make sacrifices of free time for the betterment of the Band Program, and
+  always does his/her best.
+
+## Skills
+
+<div className="nx-not-prose">
+
+**Technologies:** Node.js, React, React Native, Google Cloud, Amazon Web
+Services, Terraform, Docker, PostgreSQL, Neo4j, MongoDB, InfluxDB, Grafana,
+Arduino, Adobe Suite, Figma, Resolume, TouchDesigner, Unreal Engine, Blender
+
+**Coding Languages:** JavaScript, TypeScript, Python, C++, C, MATLAB, SQL,
+LaTeX, Swift, R
+
+**Other Interests:** Music Production, Graphic Design, DJ, VJ, Stage Lighting
+Design, Music Theory, Skiing, Biking, Aviation, Traveling
+
+</div>
+
+## Publications
+
+- Jonathan Liu, et al. **Kyle Awayan**, ”Concordance of MERFISH spatial
+  transcriptomics with bulk and single-cell RNA sequencing”, Life Science
+  Alliance, December 2022
+- **The Tabula Microcebus Consortium**, ”Tabula Microcebus: A transcriptomic
+  cell atlas of mouse lemur, an emerging primate model organism”, bioRxiv,
+  August 2022
+- Jeanette Cobian-Iñiguez, Amir Hessam Aminfar, Shusmita Saha, **Kyle Awayan**,
+  et al., ”The Transition and Spread of a Chaparral Crown Fire: Insights from
+  Laboratory Scale Wind Tunnel Experiments”, Journal of Combustion, July 2022
+- **The Tabula Sapiens Consortium**, ”The Tabula Sapiens: A multiple-organ,
+  single-cell transcriptomic atlas of humans”, Science, May 2022
+
+## Selected Passion Projects
+
+<Title
+  title="Vintage"
+  date="2021"
+  subtitle="Records Spotify listening data to a database."
+/>
+
+- Curious to see my listening habits over time
+- Created a Node.js application to periodically ping the Spotify Web API and
+  record to a database
+- Using InfluxDB and Grafana, complex queries can be made to analyze and
+  visualize the data
+
+<Title
+  title="Zuzu"
+  date="2021"
+  subtitle="Created a face recognition system to recognize faces in music videos."
+/>
+
+- Had trouble learning and remembering names of band members
+- Used the face_recognition Python library, powered by dlib and NVIDIA CUDA
+- Used a sequential Keras model with TensorFlow for classification
+- Used OpenCV to render overlays on the video of the face recognition results
+
+<Title title="Switchblade" date="2020" subtitle="A URL link organizer." />
+
+- Always lost my favorite videos on social media platforms, so this app allows
+  the user to save and organize videos found on social media platforms
+- Used Swift to make an iOS app. MongoDB Realm was used as the database, with
+  user authentication.
+- Created a function on AWS Lambda to scrape thumbnails off the social media
+  platform, and if unavailable, fall back to using the image from the Open Graph
+  protocol
+
+<Title title="Kylan" date="2020" subtitle="My personal portfolio." />
+
+- Built from the ground up
+- Figma was used to plan and draft the design
+- Utilizes Sanity CMS for easy page editing
+
+<Title
+  title="Gemini"
+  date="2020"
+  subtitle="A 'now playing' screen for Spotify."
+/>
+
+- Created a desktop app that shows a user's currently playing song
+- Collaborated with a colleague, took advantage of Git, GitHub, and GitHub
+  Actions
+- Used Electron, JavaScript, and the Spotify Web API
+- PKCE was implemented to authenticate with the Spotify API
+- Has 130+ stars on GitHub
+
+<Title
+  title="Magic Mirror"
+  date="2016"
+  subtitle="A magical mirror that showed various information through the glass."
+/>
+
+- Constructed a frame that enclosed a two-way mirror and computer monitor
+- Used an open-source Node.js based software for the interface
+- Presented it at a local Maker Faire event
