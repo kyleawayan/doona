@@ -34,7 +34,7 @@ jobs:
         run: pnpm i
 
       - name: Make sure puppeteer browsers are installed
-        run: node node_modules/puppeteer/install.js
+        run: node doona/node_modules/puppeteer/install.mjs
 
       - name: Build All
         run: pnpm build:all
