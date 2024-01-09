@@ -4,7 +4,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "npm run build-resume && next build",
+    "build-resume": "NODE_ENV=development start-server-and-test dev http://localhost:3000 'node build-resume.js'",
     "clean": "rimraf .next .turbo",
     "dev": "next",
     "start": "next start"
@@ -29,6 +30,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.31",
+    "puppeteer": "^21.7.0",
+    "start-server-and-test": "^2.0.3",
     "tailwindcss": "^3.3.3"
   },
   "nextBundleAnalysis": {
