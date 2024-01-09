@@ -16,7 +16,9 @@ export default {
     <small style={{ display: 'block', marginTop: '8rem' }}>
       {new Date().getFullYear()} © Kyle Awayan.
       <div className="footerLinks">
-        <a href="/resume">Resume</a>
+        <a href="/resume" target="_blank" rel="noreferrer">
+          Resume
+        </a>
         {' · '}
         <a
           href="https://www.linkedin.com/in/kyleawayan/"
