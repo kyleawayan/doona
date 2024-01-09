@@ -73,6 +73,10 @@ export default {
       title = `${title} - Kyle Awayan`
     }
 
+    if (meta.type === 'resume') {
+      title = 'Kyle Awayan Resume'
+    }
+
     const useSummaryLargeImage = url !== 'https://kyleawayan.com/'
 
     return (
