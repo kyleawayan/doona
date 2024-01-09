@@ -1,7 +1,8 @@
 ---
 type: posts
 title: Projects
-description: Projects by Kyle Awayan.
+date: 2023-11-22
+description: Passion projects by Kyle Awayan.
 coverKey: magic-mirror/9a26573fc3cb19bc3ef904b1afe645f07365c10a-3265x4898.webp
 coverAlt:
   "A shot of Kyle's Magic Mirror. In the mirror's reflection, Kyle is seen
@@ -17,3 +18,5 @@ coverAlt:
 ---
 
 # Projects
+
+## Some passion projects of mine

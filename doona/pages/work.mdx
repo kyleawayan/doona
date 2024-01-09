@@ -1,0 +1,94 @@
+---
+type: page
+title: Work
+date: 2023-11-23
+description: "I'm a fourth year undergrad at the University of California, Merced. I'm
+majoring in Computer Science. I'm interested in web and app development, as well
+as making videos."
+coverKey: "profile_face-512x512.jpg"
+coverAlt: "A professional studio picture of Kyle Awayan"
+---
+
+import ImageWithCaption from '../components/ImageWithCaption'
+
+export function ContributionCard({ children, link }) {
+  return (
+    <a href={link} target="_blank" rel="noreferrer" className="text-xl">
+      {children}
+    </a>
+  )
+}
+
+export function ContributionGrid({ children }) {
+  return <div className="grid grid-cols-2 gap-8">{children}</div>
+}
+
+export function MasonryGrid({ children }) {
+  return (
+    <div className="nx-not-prose grid grid-cols-2 gap-4 pt-6">{children}</div>
+  )
+}
+
+export function MasonryGridColumn({ children }) {
+  return <div className="grid gap-4 content-start">{children}</div>
+}
+
+export function MasonryGridPicture({ src, alt }) {
+  return (
+    <div>
+      <ImageWithCaption
+        src={src}
+        alt={alt}
+        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+      />
+    </div>
+  )
+}
+
+# Work
+
+## Front-end engineer at Chan Zuckerberg Biohub in San Francisco
+
+Helped scientists develop websites and visualizations for their research.
+
+### Notable contributions
+
+<ContributionGrid>
+  <ContributionCard link="https://zebrahub.ds.czbiohub.org">
+    Zebrahub <br /> An atlas of zebrafish embryonic development
+  </ContributionCard>
+  <ContributionCard link="https://tabula-microcebus.ds.czbiohub.org">
+    Tabula Microcebus <br /> A transcriptomic cell atlas of mouse lemur
+  </ContributionCard>
+  <ContributionCard link="https://spatial-transcriptomics.ds.czbiohub.org">
+    MERFISH mouse dataset <br /> Spatial transcriptomics of mouse liver and
+    kidney
+  </ContributionCard>
+  <ContributionCard link="https://tabula-sapiens-portal.ds.czbiohub.org">
+    Tabula Sapiens <br /> A multiple-organ, single-cell transcriptomic atlas of
+    humans
+  </ContributionCard>
+</ContributionGrid>
+
+---
+
+## Undergraduate student researcher at Cobian-Iñiguez Fire Lab in the University of California, Merced
+
+Developed a tool to help researchers analyze fire behavior through computer
+vision.
+
+### Publication
+
+<ContributionGrid>
+  <ContributionCard link="https://www.hindawi.com/journals/jc/2022/5630594/">
+    The Transition and Spread of a Chaparral Crown Fire: Insights from
+    Laboratory Scale Wind Tunnel Experiments
+  </ContributionCard>
+</ContributionGrid>
+
+---
+
+## Photographer and Videographer
+
+Freelanced in high school. Captured special events such as quinceañeras,
+anniversary parties, and weddings.

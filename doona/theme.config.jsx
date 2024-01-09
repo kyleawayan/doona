@@ -16,6 +16,10 @@ export default {
     <small style={{ display: 'block', marginTop: '8rem' }}>
       {new Date().getFullYear()} © Kyle Awayan.
       <div className="footerLinks">
+        <a href="/resume" target="_blank" rel="noreferrer">
+          Resume
+        </a>
+        {' · '}
         <a
           href="https://www.linkedin.com/in/kyleawayan/"
           target="_blank"
@@ -69,6 +73,10 @@ export default {
       title = 'Kyle Awayan'
     } else {
       title = `${title} - Kyle Awayan`
+    }
+
+    if (meta.type === 'resume') {
+      title = 'Kyle Awayan Resume'
     }
 
     const useSummaryLargeImage = url !== 'https://kyleawayan.com/'
