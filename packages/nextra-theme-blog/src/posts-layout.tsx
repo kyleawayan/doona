@@ -52,40 +52,6 @@ export function PostsLayout({
     const coverAlt = post.frontMatter?.coverAlt
     const directLink = post.frontMatter?.directLink
 
-    if (directLink) {
-      return (
-        <div key={post.route} className="post-item">
-          <a href={directLink}>
-            <div className="nx-not-prose nx-w-full nx-aspect-square nx-bg-gray-400">
-              {coverKey && (
-                <AWSServerlessImageHandlerImage
-                  src={coverKey}
-                  alt={coverAlt}
-                  square
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
-                />
-              )}
-            </div>
-          </a>
-          <h3 className="!nx-mb-1 !nx-mt-3">
-            <a href={directLink} className="!nx-no-underline">
-              {postTitle}
-            </a>
-          </h3>
-          {description && (
-            <p className="nx-mb-2 dark:nx-text-gray-400 nx-text-gray-600">
-              {description}
-              {config.readMore && (
-                <a href={directLink} className="post-item-more nx-ml-2">
-                  {getLinkText(directLink)}
-                </a>
-              )}
-            </p>
-          )}
-        </div>
-      )
-    }
-
     return (
       <div key={post.route} className="post-item">
         <Link href={post.route} passHref legacyBehavior>
@@ -112,7 +78,9 @@ export function PostsLayout({
             {description}
             {config.readMore && (
               <Link href={post.route} passHref legacyBehavior>
-                <a className="post-item-more nx-ml-2">{config.readMore}</a>
+                <a className="post-item-more nx-ml-2">
+                  {directLink ? getLinkText(directLink) : config.readMore}
+                </a>
               </Link>
             )}
           </p>
