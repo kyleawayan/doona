@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "npm run build-resume && next build",
-    "build-resume": "start-server-and-test dev http://localhost:3000 'node build-resume.js'",
+    "build-resume": "NODE_ENV=development start-server-and-test dev http://localhost:3000 'node build-resume.js'",
     "clean": "rimraf .next .turbo",
     "dev": "next",
     "start": "next start"
