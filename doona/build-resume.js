@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer'
 const resumeUrl = 'http://localhost:3000/resume'
 
 ;(async () => {
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({ headless: 'new' })
   const page = await browser.newPage()
   await page.goto(resumeUrl, { waitUntil: 'networkidle2' })
   await page.pdf({
